@@ -58,6 +58,16 @@ O código é organizado em torno de funções Python, onde cada uma orquestra um
 * `formatar_playlist_genai(simulated_suggestions_json_str)`: Recebe a string JSON simulada e retorna um texto amigável com a playlist sugerida.
 * `if __name__ == '__main__':`: Orquestra a sequência de chamadas das funções e lida com a interação de entrada/saída do usuário.
 
+## Nota sobre o Uso do Google ADK
+
+Inicialmente, este projeto foi concebido utilizando o framework Google Agent Development Kit (ADK) para a orquestração dos "agentes" e a definição de "ferramentas" customizadas. No entanto, durante o desenvolvimento no ambiente Google Colab, enfrentamos problemas persistentes de compatibilidade relacionados à instalação e importação de componentes do `google.adk.tools` (como a classe `Tool`).
+
+Esses problemas manifestaram-se através de `ImportError` e ciclos contínuos de solicitação de reinício do ambiente, aparentemente causados por conflitos de dependência severos entre as versões do `google-adk` disponíveis e as bibliotecas pré-instaladas no ambiente padrão do Colab no momento do desenvolvimento.
+
+Como não foi possível contornar esses problemas de ambiente de forma prática e rápida, optamos por implementar a lógica da pipeline de forma mais direta, utilizando apenas a biblioteca principal `google-genai` e orquestrando as chamadas ao modelo manualmente no código Python.
+
+Portanto, a versão atual deste projeto reflete essa adaptação e não utiliza o framework Google ADK, focando na demonstração das capacidades do modelo Gemini e na lógica da pipeline de forma procedural em Python. O Google ADK continua sendo um framework poderoso para orquestração de agentes em ambientes compatíveis.
+
 ## Possíveis Aprimoramentos Futuros
 
 Este projeto é um ponto de partida. Algumas ideias para expandi-lo incluem:
