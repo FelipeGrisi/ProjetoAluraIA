@@ -2,7 +2,7 @@
 Projeto final da Imersão Alura IA + Google Gemini
 
 
-# 🎶 MoodTunes: Sugestor de Playlists Emocionais com Google Gemini
+# 🎶 MoodTunes: Criador de playlists no Spotify orientado por afetos.
 
 ## Sobre o Projeto
 
